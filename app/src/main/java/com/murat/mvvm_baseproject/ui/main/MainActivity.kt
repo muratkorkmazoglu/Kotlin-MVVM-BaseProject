@@ -11,6 +11,7 @@ import com.murat.mvvm_baseproject.service.Response.MovieResponse
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(MainActivityViewModel::class.java) {
+    override fun getLayoutRes() = R.layout.activity_main
 
     override fun initViewModel(viewModel: MainActivityViewModel) {
         binding.viewModel = viewModel
@@ -28,8 +29,6 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(Ma
             }
         })
     }
-
-    override fun getLayoutRes() = R.layout.activity_main
 
     private fun getMovies() {
         viewModel.getMovies("Avengers", "2015")
