@@ -7,7 +7,6 @@ import com.murat.mvvm_baseproject.service.Response.MovieResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import javax.inject.Inject
 
 class MainActivityViewModel(app: Application) : BaseViewModel(app) {
 
@@ -18,7 +17,7 @@ class MainActivityViewModel(app: Application) : BaseViewModel(app) {
     }
 
     fun getMovies(tile: String, year: String) {
-        disposable.add(baseApi.getSearchMovies(tile, year, Constants.NetworkService.API_KEY_VALUE)
+        disposable.add(baseApi.getSearchMovies(tile, year, AppConstants.NetworkService.API_KEY_VALUE)
             .subscribeOn(Schedulers.io())
             .map { Resource.success(it) }
             .onErrorReturn { Resource.error(it) }

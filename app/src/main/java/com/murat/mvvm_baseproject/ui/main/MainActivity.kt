@@ -15,6 +15,18 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(Ma
     override fun initViewModel(viewModel: MainActivityViewModel) {
         binding.viewModel = viewModel
         getMovies()
+
+        if (viewModel.progressLiveData.hasActiveObservers())
+            viewModel.progressLiveData.removeObservers(this)
+
+        viewModel.progressLiveData.observe(this@MainActivity, Observer<Boolean> {
+            it?.let {
+                if (it)
+                    showProgress()
+                else
+                    hideProgress()
+            }
+        })
     }
 
     override fun getLayoutRes() = R.layout.activity_main

@@ -78,6 +78,7 @@ dependencies {
     implementation rootProject.ext.rxJava
     implementation rootProject.ext.rxAndroid
     implementation rootProject.ext.rxKotlin
+    implementation rootProject.ext.rxAnimations
 
     //net
     implementation rootProject.ext.retrofit
@@ -97,7 +98,6 @@ dependencies {
     // anko
     implementation rootProject.ext.anko
     implementation rootProject.ext.couroutines
-
 
     //Architecture Components
     // Lifecycles, LiveData, and ViewModel

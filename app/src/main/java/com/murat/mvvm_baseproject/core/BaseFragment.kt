@@ -37,4 +37,19 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding>(private va
     }
 
     open fun refresh() {}
+
+    fun showProgress() {
+        activity?.runOnUiThread {
+            if (activity != null)
+                if ((activity as? BaseActivity<*, *>)?.isShow() == false)
+                    (activity as? BaseActivity<*, *>)?.dialog?.show()
+        }
+    }
+
+    fun hideProgress() {
+        activity?.runOnUiThread {
+            if (activity != null)
+                (activity as BaseActivity<*, *>).dialog?.dismiss()
+        }
+    }
 }
