@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mvvm-BaseProject</string>
+    <string name="position" translatable="false">position</string>
+
 </resources>

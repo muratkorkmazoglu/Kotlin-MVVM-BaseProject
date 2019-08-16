@@ -89,6 +89,11 @@ dependencies {
     //picasso
     implementation rootProject.ext.picasso
 
+    //crashlytics
+    implementation (rootProject.ext.crashlytics){
+        transitive = true
+    }
+
     // anko
     implementation rootProject.ext.anko
     implementation rootProject.ext.couroutines
