@@ -1,8 +1,6 @@
 package com.murat.mvvm_baseproject.ui.main
 
 import android.arch.lifecycle.Observer
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 import com.murat.mvvm_baseproject.R
 import com.murat.mvvm_baseproject.core.BaseActivity
 import com.murat.mvvm_baseproject.core.Resource
@@ -39,7 +37,6 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(Ma
             it.let {
                 titleTv.text = it?.data?.title
             }
-
         })
     }
 }
