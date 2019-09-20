@@ -39,12 +39,13 @@ android {
             android.defaultConfig.applicationId "com.murat.mvvm_baseproject"
             buildConfigField 'String', 'API_BASE_URL', '"http://www.omdbapi.com"'
 
+            buildConfigField 'String', 'API_BASE_URL', '"https://api.themoviedb.org/3/"'
+
         }
         devFlavor {
+            buildConfigField 'String', 'API_BASE_URL', '"https://api.themoviedb.org/3/"'
             applicationId "com.murat.mvvm_baseproject"
             android.defaultConfig.applicationId "com.murat.mvvm_baseproject_dev"
-            buildConfigField 'String', 'API_BASE_URL', '"http://www.omdbapi.com"'
-
         }
     }
     dataBinding {
